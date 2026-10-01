@@ -1,0 +1,35 @@
+{
+  "$schema": "https://getcomposer.org/schema.json",
+  "name": "elan/travel-studio",
+  "type": "project",
+  "description": "ELAN premium travel studio \u2014 Laravel 9 + MySQL, compatible with PHP 8.0.x",
+  "require": {
+    "php": "^8.0.2",
+    "laravel/framework": "^9.52"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Database\\Factories\\": "database/factories/",
+      "Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "audit": {
+      "block-insecure": false
+    }
+  }
+}
